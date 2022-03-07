@@ -1,0 +1,84 @@
+{% extends 'patient/base.html' %}
+
+{% load static %}
+
+<!--CSS for this page-->
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/patient/profile.css' %}">
+{% endblock stylesheet %}
+
+{% block title %} Patient-Profile {% endblock title %}
+
+{% block head %} Profile {% endblock head %}
+
+{% block content%}
+
+<div class="hole">
+  <div class="container">
+    <div class="title">Edit-Profile</div>
+    <div class="content">
+      <form action="#" method="POST">
+          {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" name="fname" placeholder="First name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" name="lname" placeholder="Last name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" name="contact" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">City</span>
+            <input type="text" name="city" placeholder="City you live in" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Age (in years)</span>
+            <input type="text" name="age" placeholder="Enter Age" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Occupation</span>
+            <input type="text" name="occ" placeholder="Enter your Profession" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Gender</span>
+            <select name="gender"  class="form-control">
+                <option value="Male">Male</option>
+    
+                {% if data.gender == "Female" %}
+                <option value="Female" selected>Female</option>
+                {% else %}
+                <option value="Female">Female</option>
+                {% endif %}
+    
+                {% if data.gender == "Others" %}
+                <option value="Others" selected>Others</option>
+                {% else %}
+                <option value="Others">Others</option>
+                {% endif %}
+            </select>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Save Changes">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock content %}
+
+

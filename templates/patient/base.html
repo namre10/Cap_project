@@ -1,0 +1,111 @@
+{% load static %}
+   
+    {% if user.is_authenticated %}
+
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!--Chartjs CDN-->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+
+     <link rel="stylesheet" href="{% static 'css/patient/base.css' %}">
+
+     <title>{% block title %} {% endblock title %}</title>
+
+     {% block stylesheet %}
+     {% endblock stylesheet %}
+   </head>
+<body>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bx-smile icon'></i>
+      <span class="logo_name">Namaste</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="/General">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name">General</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">General</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="/Patient_info">
+            <i class='bx bx-user' ></i>
+            <span class="link_name">Profile</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Profile</a></li>
+          <!--<li><a href="#">View-Profile</a></li>
+          <li><a href="#">Edit-Profile</a></li>-->
+        </ul>
+      </li>
+      <li>
+        <a href="/Hospitals">
+          <i class='bx bx-plus-medical' ></i>
+          <span class="link_name">Hospitals</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Hospitals</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/disease_prediction">
+          <i class='bx bxs-virus' ></i>
+          <span class="link_name">Disease Predition</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Disease Prediction</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="{% url 'patient_login' %}">
+          <i class='bx bx-log-out' ></i>
+          <span class="link_name">Log-out</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Log-out</a></li>
+        </ul>
+      </li>
+</ul>
+  </div>
+
+
+  <section class="home-section">
+    <div class="home-content">
+    <i class='bx bx-menu' ></i>
+    <div class="text">{% block head %} {% endblock head %}</div>
+    </div>
+    <div class="inside">{% block content %} {% endblock content %}</div>
+</section>
+  {% endif %}
+
+
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+</body>
+</html>

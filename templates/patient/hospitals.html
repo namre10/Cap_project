@@ -1,0 +1,73 @@
+{% extends 'patient/base.html' %}
+
+{% load static %}
+
+<!--CSS for this page-->
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'css/patient/hospitals.css' %}">
+{% endblock stylesheet %}
+
+{% block title %} Hospitals {% endblock title %}
+
+{% block head %} Hospitals {% endblock head %}
+
+
+{% block content%}
+
+<div class="container">
+    <div class="item1" onclick="openTab('b1');"> <b> Medicity Hospital </b></div>
+    <div class="item2"> <b> Patan Hospital  </b></div>
+</div>
+
+<div id="b1" class="containerTab" style="display:none;background:rgb(190, 239, 255)">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <h2><center>Medicity</center></h2>
+    <small><center>Location: Karyabinayak, Contact-number: 1234567</center></small> <br> <hr> <br>
+    <center>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Specialization</th>
+            <th>Free Timings</th>
+            <th>Contact Number</th>
+            <th>Email Address</th>
+        </tr>
+        <tr>
+            <td>Sakshi Khatri</td>
+            <td>Pulmonologist</td>
+            <td>Monday-Friday <br>10:00 AM - 12:00 PM </td>
+            <td>0987654321</td>
+            <td>123@medicity.com</td>
+        </tr>
+        <tr>
+            <td>Sakshi Khatri</td>
+            <td>Pulmonologist</td>
+            <td>Monday-Friday <br>10:00 AM - 12:00 PM </td>
+            <td>0987654321</td>
+            <td>123@medicity.com</td>
+        </tr>
+        <tr>
+            <td>Sakshi Khatri</td>
+            <td>Pulmonologist</td>
+            <td>Monday-Friday <br>10:00 AM - 12:00 PM </td>
+            <td>0987654321</td>
+            <td>123@medicity.com</td>
+        </tr>
+        
+    </table>
+</center>
+  </div>
+
+<script>
+    function openTab(tabName) {
+      var i, x;
+      x = document.getElementsByClassName("containerTab");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      document.getElementById(tabName).style.display = "block";
+    }
+</script>
+
+
+{% endblock content %}

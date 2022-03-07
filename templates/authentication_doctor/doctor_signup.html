@@ -1,0 +1,47 @@
+{% load static %}
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/doctor/doctor_signup_form.css' %}">
+</head>
+<body>
+
+    {% for message in messages %}
+    <div class = "alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong>Message:</strong> {{message}}
+    </div>
+    {% endfor %}
+        
+
+        <form action="doc_signup" method="POST" class="box1">
+        {% csrf_token %}
+
+        <h1>Register</h1>
+
+            <input type="text" id="username" name="username" placeholder="Create a Username" required>
+
+            <input type="text" id="fname" name="fname" placeholder="Enter your First Name" required>
+
+            <input type="text" id="lname" name="lname" placeholder="Enter your Last Name" required>
+
+            <input type="email" id="email" name="email" placeholder="Enter your Email Address" required>
+ 
+            <input type="password" id="pass1" name="pass1" placeholder="Create your password" required>
+
+            <input type="password" id="pass2" name="pass2" placeholder="confirm your password" required>
+
+            <center><input type="submit" name="" value="Signup" /></center>
+
+        </form>
+    </div>
+</body>
+</html>
+
+{% endblock %}

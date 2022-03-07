@@ -1,0 +1,51 @@
+.container{
+    margin: 20px 0 0 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: 200px;
+    grid-gap: 30px;
+    transition: .5 ease;
+}
+
+.container .item1{
+    background-image: url(/static/images/medicity.jpg);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    cursor: pointer;
+    padding-left: 25px;
+    padding-top: 170px;
+    /**For Image**/
+    background-repeat: no-repeat;
+    background-size: 200px 160px;
+}
+
+.container .item2{
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    padding-top: 170px;
+    padding-left: 40px;
+
+    /**For Image**/
+    background-image: url(/static/images/patan.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.containerTab{
+    margin: 30px;
+    border-radius: 15px;
+}
+
+.containerTab .closebtn{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.containerTab, table, th, td{
+    margin: 22px;
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 10px;
+}

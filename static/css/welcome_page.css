@@ -1,0 +1,73 @@
+body {
+    color: white;
+ }
+ h1{
+    padding:50px;
+    font-family:cursive;
+    color: black;
+    text-align: center;
+ }
+ .left,.right {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+ }
+ .left {
+    left: 0;
+    background-color: rgb(36, 0, 95);
+    background-image: url(/static/images/wall1.jpeg);
+ }
+ .right {
+    right: 0;
+    background-color: rgb(56, 1, 44);
+    background-image: url(/static/images/wall3.jpeg);
+ }
+
+ .container {
+   position: relative;
+   width: 50%;
+ }
+ 
+ .image {
+   display: block;
+   width: 100%;
+   height: auto;
+   margin-left: 85%;
+   margin-top: 10%;
+   width: 40%;
+   border-radius: 50%;
+ }
+ 
+ .overlay {
+   position: absolute;
+   border-radius: 50%;
+   bottom: 0;
+   left: 100%;
+   right: 0;
+   background-color: lightcyan;
+   overflow: hidden;
+   width: 0;
+   height: 100%;
+   transition: .4s ease;
+ }
+ 
+ .container:hover .overlay {
+   width: 40%;
+   left: 85%;
+ }
+ 
+ .text {
+   white-space: nowrap; 
+   color: darkgrey;
+   font-size: 20px;
+   position: absolute;
+   overflow: hidden;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+ }

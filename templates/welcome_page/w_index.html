@@ -1,0 +1,26 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="../../static/css/welcome_page.css ">
+    </head>
+    <body>
+        <div class="left">
+            <h1>Doctor</h1>
+            <div class="container">
+                <img src="../../static/images/doc.png" alt="Avatar" class="image">
+                <div class="overlay">
+                 <a href="{% url 'doctor_signin' %}"> <div class="text">Get In</div></a> <!--patientlogin nai deko cha ahile-->
+                </div>
+              </div>
+        </div>
+        <div class="right">
+            <h1>Patient</h1>
+            <div class="container">
+                <img src="../../static/images/patient.png" alt="Avatar" class="image">
+                <div class="overlay">
+                 <a href="{% url 'patient_login' %}"> <div class="text">Get In</div></a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
